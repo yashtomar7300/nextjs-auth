@@ -9,9 +9,7 @@ const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({ children }) => {
   const loginWithGoogle = async () => {
     console.log("login with google");
 
-    const result = signIn("google", {
-      callbackUrl: "https://localhost:3000/admin",
-    });
+    const result = signIn("google");
 
     console.log(result, "- google signin result");
 

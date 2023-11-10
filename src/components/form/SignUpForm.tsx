@@ -47,19 +47,35 @@ const SignUpForm = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof FormSchema>) => {
-    const body = {
-      username: values.username,
-      email: values.email,
-      password: values.password,
-    };
-    const response = await axios.post("/api/user", body);
+    try {
+      const body = {
+        username: values.username,
+        email: values.email,
+        password: values.password,
+      };
+      const response = await axios.post("/api/user", body);
 
-    console.log(response, "- response");
-    if (response.status === 201) {
-      router.push("/sign-in");
-    } else {
-      console.error("Registration failed");
-      toast.success("Sign up successfully");
+      console.log(response.data, "- response");
+      if (response.status === 201) {
+        toast.success("Signed up successfully");
+        router.push("/sign-in");
+      } else {
+        console.error("Registration failed");
+        toast.error("Something went wrong");
+      }
+    } catch (error: any) {
+      console.log({ error });
+      const { data } = error?.response;
+      const usernameErr = "Username is already registed";
+      const emailErr = "Email is already registed.";
+
+      if (!data.user && data?.message === usernameErr) {
+        return toast.error(usernameErr);
+      }
+      if (!data.user && data?.message === emailErr) {
+        return toast.error(emailErr);
+      }
+      toast.error("Something went wrong");
     }
   };
 

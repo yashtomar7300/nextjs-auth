@@ -20,6 +20,8 @@ import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import router, { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import prisma from "@/lib/db";
+import axios from "axios";
 
 const FormSchema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email"),
@@ -44,22 +46,50 @@ const SignInForm = () => {
   });
 
   const onSubmit: SubmitHandler<FormData> = async (values, e) => {
-    // Getting data from the form and sending to nex-auth to signin
+    // Getting data from the form and sending to nex-auth using signin fn
 
-    const result = await signIn("credentials", {
+    const response = await axios.post("/api/getUser", {
       email: values.email,
-      password: values.password,
+    });
+
+    console.log(response, "- existing user in sign in");
+
+    const existingUser = response?.data.user;
+
+    if (!existingUser) {
+      return toast.error("Invalid Credentials");
+    }
+    if (existingUser && existingUser?.emailVerified) {
+      // As email is verified then sigin in using credentials
+      const result = await signIn("credentials", {
+        email: values.email,
+        password: values.password,
+        redirect: false,
+      });
+
+      if (result?.error) {
+        toast.error("Something went wrong");
+      } else {
+        toast.success("Logged in successfully");
+        router.refresh();
+        router.push("/admin");
+      }
+      console.log(result, " - sign-in data");
+    }
+
+    // As email is not verified then sigin in using email
+    const result = await signIn("email", {
+      email: values.email,
       redirect: false,
     });
 
-    if (!result?.ok && result?.error) {
-      console.log("something went wrong");
+    if (result?.error) {
       toast.error("Something went wrong");
     } else {
-      console.log("Logged in successfully");
-      toast.success("Logged in successfully");
-      router.refresh();
-      router.push("/admin");
+      // console.log("Logged in successfully");
+      // toast.success("Logged in successfully");
+      // router.refresh();
+      router.push("/verify-email");
     }
     console.log(result, " - sign-in data");
   };
