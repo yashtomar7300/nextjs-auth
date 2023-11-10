@@ -12,7 +12,7 @@ const VerifyEmail = () => {
   if (!session?.user) {
     return (
       <div>
-        We've sent you an email to verify your email address. please open the
+        We have sent you an email to verify your email address. please open the
         email and click on sign in button to verify your email and sign in.
       </div>
     );

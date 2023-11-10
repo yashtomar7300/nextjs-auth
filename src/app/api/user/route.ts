@@ -34,16 +34,16 @@ export async function POST(req: Request) {
     }
 
     // Check id username already exists
-    const isExistingUsername = await prisma.user.findUnique({
-      where: { username: username },
-    });
-    console.log(isExistingUsername, "- existing username");
-    if (isExistingUsername) {
-      return NextResponse.json(
-        { user: null, message: "Username is already registed" },
-        { status: 409 }
-      );
-    }
+    // const isExistingUsername = await prisma.user.findUnique({
+    //   where: { username: username },
+    // });
+    // console.log(isExistingUsername, "- existing username");
+    // if (isExistingUsername) {
+    //   return NextResponse.json(
+    //     { user: null, message: "Username is already registed" },
+    //     { status: 409 }
+    //   );
+    // }
 
     // Encrypt the password by generating hash using bcrypt
     const hashedPassword = await hash(password, 10);
