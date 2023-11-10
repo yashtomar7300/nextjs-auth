@@ -2,6 +2,7 @@
 
 import AuthProvider from "@/components/AuthProvider";
 import Navbar from "@/components/Navbar";
+// import { Header } from "@/stories/Header";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Toaster />
           <main className="h-screen flex flex-col justify-center items-center">
             <Navbar />
+            {/* <Header /> */}
             {children}
           </main>
         </body>

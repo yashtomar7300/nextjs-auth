@@ -8,8 +8,12 @@ interface GoogleSignInButtonProps {
 const GoogleSignInButton: FC<GoogleSignInButtonProps> = ({ children }) => {
   const loginWithGoogle = async () => {
     console.log("login with google");
-    const result = await signIn("github");
+
+    const result = signIn("google");
+
     console.log(result, "- google signin result");
+
+    return result;
   };
 
   return (

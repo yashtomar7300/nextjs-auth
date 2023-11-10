@@ -6,7 +6,7 @@ const AdminPage = async () => {
   console.log(session, "- session in admin page");
 
   if (session?.user) {
-    return <div>welcome {session?.user.username} to Admin Page</div>;
+    return <div>welcome {session?.user.email} to Admin Page</div>;
   }
   return <div>PLease login to see admin page</div>;
 };
