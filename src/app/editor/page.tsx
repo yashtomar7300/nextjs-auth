@@ -6,10 +6,10 @@ import React, { useEffect } from "react";
 export default function EditorPage() {
   const router = useRouter();
 
-  useEffect(() => {
-    router.refresh();
-    router.refresh();
-    console.log("refersh");
-  }, []);
+//   useEffect(() => {
+//     router.refresh();
+//     router.refresh();
+//     console.log("refersh");
+//   }, []);
   return <RichTextEditor />;
 }
