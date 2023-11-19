@@ -1,0 +1,56 @@
+/* Basic editor styles */
+.tiptap {
+    > * + * {
+      margin-top: 0.75em !important;
+    }
+  
+    ul,
+    ol {
+      padding: 0 1rem !important;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: 1.1 !important;
+    }
+  
+    code {
+      background-color: rgba(#616161, 0.1) !important;
+      color: #616161 !important;
+    }
+  
+    pre {
+      background: #0D0D0D !important;
+      color: #FFF !important;
+      font-family: 'JetBrainsMono', monospace !important;
+      padding: 0.75rem 1rem !important;
+      border-radius: 0.5rem !important;
+  
+      code {
+        color: inherit !important;
+        padding: 0 !important;
+        background: none !important;
+        font-size: 0.8rem !important;
+      }
+    }
+  
+    img {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+  
+    blockquote {
+      padding-left: 1rem !important;
+      border-left: 2px solid rgba(#0D0D0D, 0.1) !important;
+    }
+  
+    hr {
+      border: none !important;
+      border-top: 2px solid rgba(#0D0D0D, 0.1) !important;
+      margin: 2rem 0 !important;
+    }
+  }

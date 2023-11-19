@@ -2,8 +2,9 @@
 
 import AuthProvider from "@/components/AuthProvider";
 import Navbar from "@/components/Navbar";
-// import { Header } from "@/stories/Header";
-import "@/styles/globals.css";
+import { Header } from "@/stories/Header";
+// import "@/styles/globals.css";
+// import "../styles/editor.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";

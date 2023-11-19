@@ -14,13 +14,14 @@ const Navbar = async () => {
         <Link href="/">
           <HandMetal />
         </Link>
+        <Link className="ml-auto mr-8 font-bold" href="/editor">Editor</Link>
         {session?.user ? (
           <UserAccount />
         ) : (
           <Link className={buttonVariants()} href="/sign-in">
             Sign in
           </Link>
-         )} 
+        )}
       </div>
     </div>
   );

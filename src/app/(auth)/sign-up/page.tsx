@@ -1,3 +1,4 @@
+import "@/styles/globals.css";
 import SignUpForm from '@/components/form/SignUpForm';
 
 const page = () => {

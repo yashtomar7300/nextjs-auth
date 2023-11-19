@@ -1,3 +1,5 @@
+// "use client";
+import "@/styles/globals.css";
 import User from "@/components/User";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";

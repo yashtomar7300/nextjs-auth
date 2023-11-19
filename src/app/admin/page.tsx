@@ -1,5 +1,6 @@
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
+import "@/styles/globals.css";
 
 const AdminPage = async () => {
   const session = await getServerSession(authOptions);
