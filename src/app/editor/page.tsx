@@ -1,4 +1,5 @@
 "use client";
+
 import RichTextEditor from "@/components/RichTextEditor";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
