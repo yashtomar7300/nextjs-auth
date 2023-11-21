@@ -14,7 +14,15 @@ const Navbar = async () => {
         <Link href="/">
           <HandMetal />
         </Link>
-        <Link className="ml-auto mr-8 font-bold" href="/editor">Editor</Link>
+        <Link className="ml-auto mr-8 font-bold" href="/editor">
+          Editor
+        </Link>
+        <Link className="ml-auto mr-8 font-bold" href="/creativeEditor">
+          CreativeEditor SDK
+        </Link>
+        <Link className="ml-auto mr-8 font-bold" href="/aiCanvas">
+          AI Canvas
+        </Link>
         {session?.user ? (
           <UserAccount />
         ) : (

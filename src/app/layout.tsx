@@ -3,7 +3,7 @@
 import AuthProvider from "@/components/AuthProvider";
 import Navbar from "@/components/Navbar";
 import { Header } from "@/stories/Header";
-// import "@/styles/globals.css";
+import "@/styles/globals.css";
 // import "../styles/editor.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -26,7 +26,7 @@ export default function RootLayout({
       <AuthProvider>
         <body className={inter.className}>
           <Toaster />
-          <main className="h-screen flex flex-col justify-center items-center">
+          <main className="h-screen pt-11 flex flex-col justify-center items-center">
             <Navbar />
             {/* <Header /> */}
             {children}
