@@ -26,6 +26,9 @@ const Navbar = async () => {
         <Link className="ml-auto mr-8 font-bold" href="/voice-search">
           Voice Search
         </Link>
+        <Link className="ml-auto mr-8 font-bold" href="/speech-recognition">
+          Speech Recognition
+        </Link>
         {session?.user ? (
           <UserAccount />
         ) : (
