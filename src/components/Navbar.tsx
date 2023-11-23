@@ -23,6 +23,9 @@ const Navbar = async () => {
         <Link className="ml-auto mr-8 font-bold" href="/aiCanvas">
           AI Canvas
         </Link>
+        <Link className="ml-auto mr-8 font-bold" href="/voice-search">
+          Voice Search
+        </Link>
         {session?.user ? (
           <UserAccount />
         ) : (

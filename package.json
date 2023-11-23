@@ -2,6 +2,7 @@
   "name": "nextjs-auth",
   "version": "0.1.0",
   "private": true,
+  "license": "https://pqina.nl/pintura/license/",
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
@@ -17,6 +18,8 @@
     "@excalidraw/excalidraw": "^0.17.0",
     "@hookform/resolvers": "^3.1.1",
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@pqina/filepond-plugin-image-editor": "^9.0.3",
+    "@pqina/react-pintura": "^9.0.2",
     "@prisma/client": "^5.6.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
